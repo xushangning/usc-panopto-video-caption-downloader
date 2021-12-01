@@ -1,0 +1,16 @@
+{
+  "name": "USC Panopto Video Caption Downloader",
+  "description": "Download captions of videos hosted on Panopto.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["downloads"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://uscviterbi.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx"],
+      "js": ["content.js"]
+    }
+  ]
+}
