@@ -5,12 +5,12 @@
   "manifest_version": 3,
   "permissions": ["downloads"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.bundle.js"
   },
   "content_scripts": [
     {
       "matches": ["https://uscviterbi.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx"],
-      "js": ["content.js"]
+      "js": ["content.bundle.js"]
     }
   ]
 }
