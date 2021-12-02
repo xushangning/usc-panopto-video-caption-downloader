@@ -11,6 +11,10 @@ function isUuid(s) {
     return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(s);
 }
 
+function sentenceTerminates(s) {
+    return s.endsWith('.') || s.endsWith('?') || s.endsWith('!');
+}
+
 downloadCaptionsButton.addEventListener('click', async (event) => {
     // ALL content in the <body> is wrapped in a <form>, likely designed to
     // thwart injection of <button>... Call preventDefault to prevent form
@@ -41,7 +45,7 @@ downloadCaptionsButton.addEventListener('click', async (event) => {
 
         let captions = '';
         for (const c of captionInfo) {
-            captions += c.Caption + '\n\n';
+            captions += c.Caption + (sentenceTerminates(c.Caption) ? '\n\n' : ' ');
         }
 
         const title = row.querySelector('.detail-title').textContent.trim().replaceAll('/', '-');
