@@ -278,6 +278,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@zip.js/zip.js@npm:^2.3.19":
+  version: 2.3.19
+  resolution: "@zip.js/zip.js@npm:2.3.19"
+  checksum: 23e4c4af95ea4a9bd973d37671d2a58a70dbebac960f3ffc4980a7980013451925af10c969bcd6bdf7cfd09fe74db44c0846b2cabc9861629ef261ad848b03f6
+  languageName: node
+  linkType: hard
+
 "acorn-import-assertions@npm:^1.7.6":
   version: 1.8.0
   resolution: "acorn-import-assertions@npm:1.8.0"
@@ -614,6 +621,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "getting-started@workspace:."
   dependencies:
+    "@zip.js/zip.js": ^2.3.19
     copy-webpack-plugin: ^9.1.0
     webpack: ^5.64.4
     webpack-cli: ^4.9.1

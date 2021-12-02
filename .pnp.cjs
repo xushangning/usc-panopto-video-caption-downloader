@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@zip.js/zip.js", "npm:2.3.19"],
             ["copy-webpack-plugin", "virtual:ed4838b6c9194039a63c4aa489f9ee93904747265688ed5e6b990562082d18efc09818f3045f034641a308d814349ddd7963cd9897b6f6b34535ab31d85f1bcd#npm:9.1.0"],
             ["webpack", "virtual:ed4838b6c9194039a63c4aa489f9ee93904747265688ed5e6b990562082d18efc09818f3045f034641a308d814349ddd7963cd9897b6f6b34535ab31d85f1bcd#npm:5.64.4"],
             ["webpack-cli", "virtual:ed4838b6c9194039a63c4aa489f9ee93904747265688ed5e6b990562082d18efc09818f3045f034641a308d814349ddd7963cd9897b6f6b34535ab31d85f1bcd#npm:4.9.1"]
@@ -391,6 +392,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@xtuc-long-npm-4.2.2-37236e6d72-8ed0d477ce.zip/node_modules/@xtuc/long/",
           "packageDependencies": [
             ["@xtuc/long", "npm:4.2.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@zip.js/zip.js", [
+        ["npm:2.3.19", {
+          "packageLocation": "./.yarn/cache/@zip.js-zip.js-npm-2.3.19-a5e8cdbbb7-23e4c4af95.zip/node_modules/@zip.js/zip.js/",
+          "packageDependencies": [
+            ["@zip.js/zip.js", "npm:2.3.19"]
           ],
           "linkType": "HARD",
         }]
@@ -814,6 +824,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["getting-started", "workspace:."],
+            ["@zip.js/zip.js", "npm:2.3.19"],
             ["copy-webpack-plugin", "virtual:ed4838b6c9194039a63c4aa489f9ee93904747265688ed5e6b990562082d18efc09818f3045f034641a308d814349ddd7963cd9897b6f6b34535ab31d85f1bcd#npm:9.1.0"],
             ["webpack", "virtual:ed4838b6c9194039a63c4aa489f9ee93904747265688ed5e6b990562082d18efc09818f3045f034641a308d814349ddd7963cd9897b6f6b34535ab31d85f1bcd#npm:5.64.4"],
             ["webpack-cli", "virtual:ed4838b6c9194039a63c4aa489f9ee93904747265688ed5e6b990562082d18efc09818f3045f034641a308d814349ddd7963cd9897b6f6b34535ab31d85f1bcd#npm:4.9.1"]
