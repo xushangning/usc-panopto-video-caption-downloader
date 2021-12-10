@@ -2,9 +2,12 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+    module: {
+        rules: [{test: /\.ts$/, loader: 'ts-loader'}]
+    },
     entry: {
-        content: path.resolve('src', 'js', 'content.js'),
-        background: path.resolve('src', 'js', 'background.js'),
+        content: path.resolve('src', 'ts', 'content.ts'),
+        background: path.resolve('src', 'ts', 'background.ts'),
     },
     output: {
         path: path.resolve('dist'),

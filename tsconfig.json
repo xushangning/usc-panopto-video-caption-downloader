@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "outDir": "dist",
+      "strict": true,
+      "module": "es2015",
+      "moduleResolution": "node",
+      "target": "ES2015",
+      "lib": ["ESNext", "DOM", "DOM.Iterable"]
+    },
+    "files": ["src/ts/background.ts", "src/ts/content.ts"]
+}
