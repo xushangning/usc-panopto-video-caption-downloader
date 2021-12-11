@@ -54,7 +54,8 @@ downloadCaptionsButton.addEventListener('click', async (event) => {
         const title = row.querySelector('.detail-title');
         let basename = i.toString();
         if (title && title.textContent && title.textContent.trim().length) {
-            basename = title.textContent.trim().replaceAll('/', '-')
+            // Reformat dates to remove slashes.
+            basename = title.textContent.trim().replace(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})/g, '$3-$1-$2').replaceAll('/', '-');
         }
         await zipWriter.add(basename + '.txt', new zip.TextReader(captions));
 
