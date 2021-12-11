@@ -27,19 +27,25 @@ downloadCaptionsButton.addEventListener('click', async (event) => {
     ]);
     const zipWriter = new zip.ZipWriter(new zip.BlobWriter('application/zip'));
 
-    const videoTable = document.querySelector('#detailsTable');
-    if (videoTable === null) {
+    const SELECTORS = ['#listTable > tbody', '#detailsTable > tbody', '#thumbnailGrid'];
+    let viewId = 1;
+    const match = location.hash.match(/view=(\d)$/);
+    if (match) {
+        viewId = parseInt(match[1]);
+    }
+    const videoList = document.querySelector(SELECTORS[viewId]);
+    if (videoList === null) {
         throw new Error('Videos not found in the web page.');
     }
-    const videoRows = (videoTable as HTMLTableElement).tBodies[0].rows;
+
     let i = 0;
-    for (const row of videoRows) {
+    for (const videoItem of videoList.children) {
         // Skip placeholder rows.
-        if (!isUuid(row.id)) {
+        if (!isUuid(videoItem.id)) {
             continue;
         }
 
-        postBody.set('deliveryId', row.id);
+        postBody.set('deliveryId', videoItem.id);
         const resp = await fetch(new Request(ENDPOINT, {
             method: 'POST',
             body: postBody,
@@ -51,7 +57,7 @@ downloadCaptionsButton.addEventListener('click', async (event) => {
             captions += c.Caption + (sentenceTerminates(c.Caption) ? '\n\n' : ' ');
         }
 
-        const title = row.querySelector('.detail-title');
+        const title = videoItem.querySelector('.detail-title');
         let basename = i.toString();
         if (title && title.textContent && title.textContent.trim().length) {
             // Reformat dates to remove slashes.
